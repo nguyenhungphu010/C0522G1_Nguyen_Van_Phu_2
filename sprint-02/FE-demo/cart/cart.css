@@ -1,0 +1,83 @@
+body {
+    padding: 0;
+    background-color: gray;
+
+}
+
+#header {
+    background-color: white;
+    height: 70px;
+    border: solid green;
+}
+
+.footer {
+    margin-top: 20px;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: white;
+}
+
+.cart-body {
+    background-color: white;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+table td {
+    /*border: solid 2px;*/
+    /*border-collapse: collapse;*/
+}
+table{
+    width: 100%;
+
+}
+
+.cart-header {
+    height: 50px;
+    background-color: #8cdc64;
+    border-radius: 10px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+
+.cart-icon {
+    float: left;
+    width: 5%;
+    padding-left: 0px;
+    padding-top: 8px;
+    object-fit: contain;
+}
+
+.cart-title {
+    width: 90%;
+    padding-top: 12px;
+    padding-left: 15px;
+    font-family: nunito-sans, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #212121;
+}
+
+.cart-content {
+    margin: 20px;
+}
+.product-price {
+    line-height: 1rem;
+    font-size: 1.2rem !important;
+    color: #C92127;
+    font-weight: 500;
+}
+.pay-block{
+    padding-right: 15px;
+}
+.pic-book-detail{
+    height: 10px;
+}

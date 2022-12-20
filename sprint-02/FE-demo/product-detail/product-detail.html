@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart Shopping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" id="header">
+        <div class="col-lg-2" style="border: black">
+            <img src="/Module_6/sprint-02/FE-demo/PIC/Happy(2)-crop.png"
+                 style="height: 60px; padding-top: 5px; padding-left: 10px">
+        </div>
+        <div class="col-lg-8" style="padding-top: 13px">
+            <div class="row">
+                <div class="col-3">
+                    <div class="dropdown" style="padding-left: 75px">
+                        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                           data-bs-toggle="dropdown" aria-expanded="false"
+                           style="background-color: #8cdc64; font-weight: bolder">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <form class="row">
+                        <div class="col-10" style="padding-left: 0px">
+                            <input type="password" class="form-control" id="inputPassword2" placeholder="search">
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="btn btn-primary" style="background-color: #8cdc64">Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 " style="padding-top: 13px; padding-left: 10px">
+            <div class="row" style="padding-left: 0px">
+                <div class="col-lg-4" style="padding-right: 20px">
+                    <img src="/Module_6/sprint-02/FE-demo/PIC/notification.png" style="height: 35px">
+                </div>
+                <div class="col-lg-4">
+                    <img src="/Module_6/sprint-02/FE-demo/PIC/shopping-cart.png" style="height: 35px">
+                </div>
+                <div class="col-lg-4">
+                    <img src="/Module_6/sprint-02/FE-demo/PIC/user.png" style="height: 35px">
+                </div>
+            </div>
+        </div>
+
+        <div class="row product-info">
+            <!--Hinhf ảnh sách-->
+            <div class="col-lg-5">
+                <div class="row product-pic-detail">
+                    <table style="width: 85%">
+                        <tr>
+                            <td style="width: 30%"><img src="/PIC/jack_ma/jack_ma_book (1).jpg"></td>
+                            <td rowspan="4" style="text-align: center;
+                    vertical-align: center">
+                                <img src="/PIC/book-img-crop-resize/book_economy (8).jpg"
+                                     style="width: 100%; height: 100%; object-fit: contain">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/PIC/jack_ma/jack_ma_book (2).jpg"></td>
+
+                        </tr>
+                        <tr>
+                            <td><img src="/PIC/jack_ma/jack_ma_book (3).jpg"></td>
+
+                        </tr>
+                        <tr>
+                            <td><img src="/PIC/jack_ma/jack_ma_book (4).jpg"></td>
+
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+            <!--Chi tiết sản phẩm-->
+            <div class="col-lg-7">
+                <div class="product-info-detail">
+                    <table style="width: 100%">
+                        <tr>
+                            <td colspan="2" style="font-size: 20px;
+                        font-weight: bold;height: 60px">
+                                Jack Ma Và Alibaba (Seri Tủ Sách Doanh Nhân Hàng Đầu Châu Á)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nhà cung cấp: <span style="font-weight: bold; color: blue">Chibooks</span></td>
+                            <td>Tác giả: <span style="font-weight: bold">Nghiêm Kỳ Thành</span></td>
+                        </tr>
+                        <tr>
+                            <td>Nhà xuất bản: <span style="font-weight: bold">NXB Lao Động</span></td>
+                            <td>Hình thức bìa: <span style="font-weight: bold">Bìa Mềm</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="vertical-align:center"><p class="product-price">120.000 đ</p>
+                            </td>
+
+                        </tr>
+                    </table>
+                    <table style="width: 100%; margin-top: 20px">
+                        <tr>
+                            <td style="width: 30%">Chính sách đổi trả</td>
+                            <td>
+                                Đổi trả sản phẩm trong 30 ngày
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-weight: bold">Số lượng:</span></td>
+                            <td> 01</td>
+                        </tr>
+                        <tr style="height: 70px;">
+                            <td colspan="2" style="text-align: left">
+                                <button style="width: 30%; height: 40px; border-radius: 10px;
+                            background-color: #ffff; color: #C92127; font-weight: bold; font-size: 1rem; border-color: #C92127;
+                            ">Thêm vào giỏ hàng
+                                </button>
+                                <button style="width: 30%; height: 40px; border-radius: 10px;
+                            background-color: #C92127; color: white; font-weight: bold; font-size: 1rem;
+                            border: none">Mua ngay
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row product-detail">
+            <table style="margin-bottom: 20px">
+                <tr>
+                    <th colspan="2" style="font-size: 20px; height: 50px">Thông tin sản phẩm</th>
+                </tr>
+                <tr>
+                    <td style="width: 30%">Mã hàng</td>
+                    <td>8938538123200</td>
+                </tr>
+                <tr>
+                    <td>Tên Nhà Cung Cấp</td>
+                    <td>Chibooks</td>
+                </tr>
+                <tr>
+                    <td>Tác giả</td>
+                    <td>Nghiêm Kỳ Thành</td>
+                </tr>
+                <tr>
+                    <td>Người Dịch</td>
+                    <td>Huyền Nhi</td>
+                </tr>
+                <tr>
+                    <td>NXB</td>
+                    <td>NXB Lao Động</td>
+                </tr>
+                <tr>
+                    <td>Năm XB</td>
+                    <td>2021</td>
+                </tr>
+                <tr>
+                    <td>Trọng lượng (gr)</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td>Kích Thước Bao Bì</td>
+                    <td>20.5 x 14.5 cm</td>
+                </tr>
+                <tr>
+                    <td>Số trang</td>
+                    <td>216</td>
+                </tr>
+                <tr>
+                    <td>Hình thức</td>
+                    <td>Bìa Mềm</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                        Cuốn sách giới thiệu về cuộc đời và quá trình lập nghiệp của Jack Ma cùng những khó khăn và
+                        nghị lực
+                        của ông khi từng bước chuyển mình từ một giáo viên dạy tiếng Anh sang vai trò doanh nhân.
+                        Những thất
+                        bại liên tiếp không làm ông chùn bước, trái lại còn khiến ông điên cuồng học hỏi kinh
+                        nghiệm, tích
+                        lũy kiến thức và tiếp tục tiến lên phía trước với châm ngôn sống “Đừng bao giờ từ bỏ!”.
+
+                        Từ sau khi lên sàn chứng khoán New York (2014), tập đoàn thương mại điện tử Alibaba do ông
+                        sáng lập
+                        liên tục phát triển như vũ bão, liên tục lọt top 100 thương hiệu giá trị nhất thế giới hàng
+                        năm. Sự
+                        phát triển của Alibaba không thể tách rời khỏi sự phát triển mạnh mẽ trong lĩnh vực thương
+                        mại điện
+                        tử ở Trung Quốc và thế giới.
+
+                        Không chỉ trở thành một trong top 20 người giàu nhất thế giới, và lọt top 30 người quyền lực
+                        nhất
+                        thế giới, tỷ phú Jack Ma còn trở thành người truyền cảm hứng cho thế hệ trẻ ở nhiều nước.
+                        Nhiều câu
+                        nói của ông đã truyền động lực sống cho rất nhiều người, giúp nhiều người thay đổi cách suy
+                        nghĩ,
+                        cách sống và từ đó đạt được thành công.
+
+                        Giới thiệu Tủ sách doanh nhân hàng đầu châu Á:
+
+                        Tủ sách doanh nhân hàng đầu châu Á giới thiệu về các doanh nhân hàng đầu châu Á trong các
+                        lĩnh vực
+                        kinh doanh của thời đại mới 4.0 cùng những thành công và cả thất bại của họ trong quá trình
+                        khởi
+                        nghiệp và gầy dựng. Những doanh nghiệp hàng đầu mà họ và các cộng sự đang dẫn dắt hiện đang
+                        phát
+                        triển mạnh mẽ, ghi dấu ấn đặc sắc, tác động to lớn đến sự tăng trưởng của nền kinh tế Trung
+                        Quốc nói
+                        riêng và của khu vực, quốc tế nói chung.
+
+                        Trong đó phải kể đến: Mã Hóa Đằng và Tencent, Nhậm Chính Phi và Huawei, Jack Ma và Alibaba,
+                        Vương
+                        Kiện Lâm và đế chế Vạn Đạt, Đổng Minh Châu và Gree, Lôi Quân và Xiaomi, Lý Ngạn Hoằng và
+                        Baidu, Lý
+                        Gia Thành và Trường Giang, Chu Hồng Y và Qihoo 360, Vương Vệ và Thuận Phong…
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold">
+                        Giới thiệu Tủ sách doanh nhân hàng đầu châu Á:
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Tủ sách doanh nhân hàng đầu châu Á giới thiệu về các doanh nhân hàng đầu châu Á trong các
+                        lĩnh vực
+                        kinh doanh của thời đại mới 4.0 cùng những thành công và cả thất bại của họ trong quá trình
+                        khởi
+                        nghiệp và gầy dựng. Những doanh nghiệp hàng đầu mà họ và các cộng sự đang dẫn dắt hiện đang
+                        phát
+                        triển mạnh mẽ, ghi dấu ấn đặc sắc, tác động to lớn đến sự tăng trưởng của nền kinh tế Trung
+                        Quốc nói
+                        riêng và của khu vực, quốc tế nói chung.
+
+                        Trong đó phải kể đến: Mã Hóa Đằng và Tencent, Nhậm Chính Phi và Huawei, Jack Ma và Alibaba,
+                        Vương
+                        Kiện Lâm và đế chế Vạn Đạt, Đổng Minh Châu và Gree, Lôi Quân và Xiaomi, Lý Ngạn Hoằng và
+                        Baidu, Lý
+                        Gia Thành và Trường Giang, Chu Hồng Y và Qihoo 360, Vương Vệ và Thuận Phong…
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row" style="background-color: white; height: 50px; margin-top: 1%">
+            <div class="col-lg-4">
+                <div class="row" style="margin-left: 22%; margin-top: 2%">
+                    <div class="col-lg-1">
+                        <img src="/PIC/store.png" style="width: 25px">
+                    </div>
+                    <div class="col-lg-11">
+                        <span style="font-weight: bold; font-size: 15px; margin-left: 3%">Chính Sách Khách Sỉ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row" style="margin-left: 22%; margin-top: 2%" >
+                    <div class="col-lg-1">
+                        <img src="/PIC/delivery.png" style="height: 25px">
+                    </div>
+                    <div class="col-lg-11">
+                        <span style="font-weight: bold; font-size: 15px; margin-left: 3%;">Thời gian giao hàng</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row" style="margin-left: 22%; margin-top: 2%">
+                    <div class="col-lg-1">
+                        <img src="/PIC/return-box.png" style="height: 25px">
+                    </div>
+                    <div class="col-lg-11">
+                        <span style="font-weight: bold; font-size: 15px; margin-left: 3%">Chính Sách đổi trảg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <footer class="py-5">
+                    <div class="row">
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>DỊCH VỤ</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Điều khoản sử
+                                    dụng</a>
+                                </li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách bảo mật
+                                    thông
+                                    tin cá nhân</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách bảo mật
+                                    thanh
+                                    toán</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Giới thiệu
+                                    Happybook</a>
+                                </li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hệ thống trung tâm
+                                    -
+                                    nhà
+                                    sách</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>HỖ TRỢ</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách đổi -
+                                    trả -
+                                    hoàn tiền</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách bảo
+                                    hành -
+                                    bồi
+                                    hoàn</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách vận
+                                    chuyển</a>
+                                </li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách khách
+                                    sỉ</a>
+                                </li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Phương thức thanh
+                                    toán
+                                    và
+                                    xuất HĐ</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>TÀI KHOẢN CỦA TÔI</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Đăng nhập/Tạo mới
+                                    tài
+                                    khoản</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Thay đổi địa chỉ
+                                    khách
+                                    hàng</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chi tiết tài
+                                    khoản</a>
+                                </li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lịch sử mua
+                                    hàng</a>
+                                </li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Khóa tài khoản</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5 offset-md-1 mb-3">
+                            <div class="row d-flex justify-content-center">
+                                <img src="/PIC/Happy(2)-crop.png" style="width: 60%; height: 60%; object-fit: contain">
+                            </div>
+                            <div class="row" style="padding-top: 10px">
+                                <form>
+                                    <h5>Hệ thống nhà sách HappyBook</h5>
+                                    <p>Lầu 5, 387-389 Hai Bà Trưng Quận 3 TP HCMCông Ty Cổ Phần Phát Hành Sách TP HCM -
+                                        FAHASA60
+                                        - 62 Lê Lợi, Quận 1, TP. HCM, Việt Nam</p>
+                                    <p style="font-weight: lighter">happybook.com nhận đặt hàng trực tuyến và giao hàng
+                                        tận
+                                        nơi.
+                                        KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ
+                                        Thống
+                                        Fahasa trên toàn quốc.</p>
+                                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                        <label for="newsletter1" class="visually-hidden">Email</label>
+                                        <input id="newsletter1" type="text" class="form-control" placeholder="Email">
+                                        <button class="btn btn-primary" type="button" style="background-color: #8cdc64">
+                                            Subcribe
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                        <p>© 2022 Company, Inc. All rights reserved.</p>
+                        <ul class="list-unstyled d-flex">
+                            <li class="ms-3"><a class="link-dark" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter"></use>
+                                </svg>
+                            </a></li>
+                            <li class="ms-3"><a class="link-dark" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use>
+                                </svg>
+                            </a></li>
+                            <li class="ms-3"><a class="link-dark" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use>
+                                </svg>
+                            </a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</html>

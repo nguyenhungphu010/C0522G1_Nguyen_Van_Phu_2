@@ -1,0 +1,86 @@
+body {
+  padding: 0;
+  background-color: gray;
+}
+
+#header {
+  background-color: white;
+  height: 70px;
+  border: solid green;
+}
+
+.ads-pic-1 {
+  background-color: white;
+}
+
+.ads-pic-2 {
+  background-color: white;
+  padding-top: 7px;
+}
+
+.footer {
+  background-color: white;
+}
+
+.category-header {
+  height: 50px;
+  background-color: #8cdc64;
+  border-radius: 10px;
+  margin-right: 0px;
+}
+
+.body {
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.book-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.book-container .btn {
+  background-color: #8cdc64;
+}
+
+.book-container .card {
+  width: 13rem;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.category-icon {
+  float: left;
+  width: 5%;
+  padding-left: 0px;
+  padding-top: 6px;
+  object-fit: contain;
+}
+
+.category-title {
+  float: left;
+  width: 90%;
+  padding-left: 0px;
+  padding-top: 6px;
+  object-fit: contain;
+}
+
+.footer {
+  margin-top: 20px;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.book-container {
+  justify-content: center;
+}
+
+.product-price {
+  line-height: 1rem;
+  font-size: 1.2rem !important;
+  color: #C92127;
+  font-weight: 500;
+}

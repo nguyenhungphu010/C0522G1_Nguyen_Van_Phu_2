@@ -1,0 +1,190 @@
+<div class="row product-info">
+  <!--Hinhf ảnh sách-->
+  <div class="col-lg-5">
+    <div class="row product-pic-detail">
+      <table style="width: 85%">
+        <tr>
+          <td style="width: 30%"><img src="/assets/PIC/jack_ma/jack_ma_book (1).jpg"></td>
+          <td rowspan="4" style="text-align: center;
+                    vertical-align: center">
+            <img src="{{book.image}}"
+                 style="width: 100%; height: 100%; object-fit: contain">
+          </td>
+        </tr>
+        <tr>
+          <td><img src="/assets/PIC/jack_ma/jack_ma_book (2).jpg"></td>
+        </tr>
+        <tr>
+          <td><img src="/assets/PIC/jack_ma/jack_ma_book (3).jpg"></td>
+        </tr>
+        <tr>
+          <td><img src="/assets/PIC/jack_ma/jack_ma_book (4).jpg"></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  <!--Chi tiết sản phẩm-->
+  <div class="col-lg-7">
+    <div class="product-info-detail">
+      <table style="width: 100%">
+        <tr>
+          <td colspan="2" style="font-size: 20px;
+                        font-weight: bold;height: 60px">
+            <span>{{book.name}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Nhà cung cấp: <span style="font-weight: bold; color: blue">{{book.supplier}}</span></td>
+          <td>Tác giả: <span style="font-weight: bold">{{book.author}}</span></td>
+        </tr>
+        <tr>
+          <td>Nhà xuất bản: <span style="font-weight: bold" >{{book.publisher}}</span></td>
+          <td>Hình thức bìa: <span style="font-weight: bold" >{{book.cover}}</span></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="vertical-align:center"><p class="product-price" >{{book.price | currency: "VND"}}</p>
+          </td>
+
+        </tr>
+      </table>
+      <table style="width: 100%; margin-top: 20px">
+        <tr>
+          <td style="width: 30%">Chính sách đổi trả</td>
+          <td>
+            Đổi trả sản phẩm trong 30 ngày
+          </td>
+        </tr>
+        <tr>
+          <td><span style="font-weight: bold">Số lượng:</span></td>
+          <td> 01</td>
+        </tr>
+        <tr style="height: 70px;">
+          <td colspan="2" style="text-align: left">
+            <button style="width: 30%; height: 40px; border-radius: 10px;
+                            background-color: #ffff; color: #C92127; font-weight: bold; font-size: 1rem; border-color: #C92127;
+                            ">Thêm vào giỏ hàng
+            </button>
+            <button style="width: 30%; height: 40px; border-radius: 10px;
+                            background-color: #C92127; color: white; font-weight: bold; font-size: 1rem;
+                            border: none">Mua ngay
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row product-detail">
+  <table style="margin-bottom: 20px">
+    <tr>
+      <th colspan="2" style="font-size: 20px; height: 50px">Thông tin sản phẩm</th>
+    </tr>
+    <tr>
+      <td style="width: 30%">Mã hàng</td>
+      <td>8938538123200</td>
+    </tr>
+    <tr>
+      <td>Tên Nhà Cung Cấp</td>
+      <td>{{book.supplier}}</td>
+    </tr>
+    <tr>
+      <td>Tác giả</td>
+      <td>{{book.author}}</td>
+    </tr>
+    <tr>
+      <td>Người Dịch</td>
+      <td>{{book.translator}}</td>
+    </tr>
+    <tr>
+      <td>NXB</td>
+      <td>{{book.publisher}}</td>
+    </tr>
+    <tr>
+      <td>Năm XB</td>
+      <td>{{book.publishYear}}</td>
+    </tr>
+    <tr>
+      <td>Trọng lượng (gr)</td>
+      <td>{{book.weight}}</td>
+    </tr>
+    <tr>
+      <td>Kích Thước Bao Bì</td>
+      <td>{{book.demension}}</td>
+    </tr>
+    <tr>
+      <td>Số trang</td>
+      <td>{{book.pages}}</td>
+    </tr>
+    <tr>
+      <td>Hình thức</td>
+      <td>{{book.cover}}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr>
+
+        {{book.details}}
+
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-weight: bold">
+        Giới thiệu Tủ sách doanh nhân hàng đầu châu Á:
+      </td>
+
+    </tr>
+    <tr>
+      <td colspan="2">
+        Tủ sách doanh nhân hàng đầu châu Á giới thiệu về các doanh nhân hàng đầu châu Á trong các
+        lĩnh vực
+        kinh doanh của thời đại mới 4.0 cùng những thành công và cả thất bại của họ trong quá trình
+        khởi
+        nghiệp và gầy dựng. Những doanh nghiệp hàng đầu mà họ và các cộng sự đang dẫn dắt hiện đang
+        phát
+        triển mạnh mẽ, ghi dấu ấn đặc sắc, tác động to lớn đến sự tăng trưởng của nền kinh tế Trung
+        Quốc nói
+        riêng và của khu vực, quốc tế nói chung.
+
+        Trong đó phải kể đến: Mã Hóa Đằng và Tencent, Nhậm Chính Phi và Huawei, Jack Ma và Alibaba,
+        Vương
+        Kiện Lâm và đế chế Vạn Đạt, Đổng Minh Châu và Gree, Lôi Quân và Xiaomi, Lý Ngạn Hoằng và
+        Baidu, Lý
+        Gia Thành và Trường Giang, Chu Hồng Y và Qihoo 360, Vương Vệ và Thuận Phong…
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="row" style="background-color: white; height: 50px; margin-top: 1%">
+  <div class="col-lg-4">
+    <div class="row" style="margin-left: 22%; margin-top: 2%">
+      <div class="col-lg-1">
+        <img src="/assets/PIC/store.png" style="width: 25px">
+      </div>
+      <div class="col-lg-11">
+        <span style="font-weight: bold; font-size: 15px; margin-left: 3%">Chính Sách Khách Sỉ</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="row" style="margin-left: 22%; margin-top: 2%" >
+      <div class="col-lg-1">
+        <img src="/assets/PIC/delivery.png" style="height: 25px">
+      </div>
+      <div class="col-lg-11">
+        <span style="font-weight: bold; font-size: 15px; margin-left: 3%;">Thời gian giao hàng</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="row" style="margin-left: 22%; margin-top: 2%">
+      <div class="col-lg-1">
+        <img src="/assets/PIC/return-box.png" style="height: 25px">
+      </div>
+      <div class="col-lg-11">
+        <span style="font-weight: bold; font-size: 15px; margin-left: 3%">Chính Sách đổi trảg</span>
+      </div>
+    </div>
+  </div>
+</div>
