@@ -1,52 +1,61 @@
 <div class="container-fluid">
   <div class="row" id="header">
-  <div class="col-2" style="border: black">
-    <img src="/assets/PIC/Happy(2)-crop.png"
-         style="height: 60px; padding-top: 5px; padding-left: 10px">
-  </div>
-  <div class="col-8" style="padding-top: 13px">
-    <div class="row">
-      <div class="col-3">
-        <div class="dropdown" style="padding-left: 75px">
-          <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-             data-bs-toggle="dropdown" aria-expanded="false"
-             style="background-color: #8cdc64; font-weight: bolder">
-            Category
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+    <div class="col-2" style="border: black">
+      <img src="/assets/PIC/Happy(2)-crop.png"
+           style="height: 60px; padding-top: 5px; padding-left: 10px">
+    </div>
+    <div class="col-8" style="padding-top: 13px">
+      <div class="row">
+        <div class="col-3">
+          <div class="dropdown" style="padding-left: 75px">
+            <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+               data-bs-toggle="dropdown" aria-expanded="false"
+               style="background-color: #8cdc64; font-weight: bolder">
+              Category
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-9">
+          <form class="row">
+            <div class="col-10" style="padding-left: 0px">
+              <input type="password" class="form-control" id="inputPassword2" placeholder="search">
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary" style="background-color: #8cdc64">Search</button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="col-9">
-        <form class="row">
-          <div class="col-10" style="padding-left: 0px">
-            <input type="password" class="form-control" id="inputPassword2" placeholder="search">
-          </div>
-          <div class="col-2">
-            <button type="submit" class="btn btn-primary" style="background-color: #8cdc64">Search</button>
-          </div>
-        </form>
-      </div>
     </div>
-  </div>
 
-  <div class="col-2 d-flex  " style="padding-top: 13px; padding-left: 10px">
-    <div class="row" style="padding-left: 0px">
-      <div class="col-4" style="padding-right: 20px">
-        <img src="/assets/PIC/notification.png" style="height: 35px">
-      </div>
-      <div class="col-4">
-        <img src="/assets/PIC/shopping-cart.png" style="height: 35px">
-      </div>
-      <div class="col-4">
-        <img src="/assets/PIC/user.png" style="height: 35px">
+    <div class="col-2 d-flex  " style="padding-top: 13px; padding-left: 10px">
+      <div class="row" style="padding-left: 0px">
+        <div class="col-4" style="padding-right: 20px">
+          <img src="/assets/PIC/notification.png" style="height: 35px">
+        </div>
+        <div class="col-4">
+          <a routerLink="/home/cart">
+            <img src="/assets/PIC/shopping-cart.png" style="height: 35px"></a>
+
+        </div>
+        <div class="col-4" *ngIf="isLogin== '' ">
+          <a routerLink="/login">
+            <img src="/assets/PIC/user.png" style="height: 35px">
+          </a>
+        </div>
+        <div class="col-4">
+          <a (click)="logOut()" *ngIf="isLogin == 'login'">
+            <img src="/assets/PIC/logout.png" style="height: 35px">
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" routerLink="/home/list">Home</a>
@@ -54,10 +63,11 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/book/list">Book Store</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="isEmployee || isAdmin">
       <a class="nav-link" routerLink="/customer/list">Customer</a>
+
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="isAdmin">
       <a class="nav-link disabled" routerLink="/order/list" tabindex="-1" aria-disabled="true">Order Manager</a>
     </li>
   </ul>

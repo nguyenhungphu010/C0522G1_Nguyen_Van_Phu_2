@@ -4,7 +4,8 @@
 
       <div class="row cart-header d-flex">
         <div class="cart-icon">
-          <img src="/assets/PIC/shopping-cart.png" alt="shopping-cart" style="height: 35px;object-fit: contain; padding-left: 8px">
+          <img src="/assets/PIC/shopping-cart.png" alt="shopping-cart"
+               style="height: 35px;object-fit: contain; padding-left: 8px">
         </div>
         <div class="cart-title">
           <p>Giỏ hàng của bạn</p>
@@ -12,9 +13,10 @@
       </div>
       <div class=" row cart-content">
         <table>
+          <thead>
           <tr style="text-align: center; height: 50px">
             <th style="width: 7%">
-              <input type="checkbox">
+              <!--              <input type="checkbox">-->
             </th>
             <th style="width: 20%">Chọn sản phẩm</th>
             <th style="width: 20%">Sản phẩm</th>
@@ -22,58 +24,180 @@
             <th>Thành tiền</th>
             <th style="width: 7%">Xóa</th>
           </tr>
+          </thead>
+          <tbody *ngFor="let cart of cartList; index as i">
           <tr style="text-align: center">
             <td>
-              <input type="checkbox">
+              <input name="select" (change)="select(cart)" type="checkbox">
             </td>
             <td>
-              <img src="/assets/PIC/book-vanhoc-resize-crop/image_vanhoc (1).jpg" alt="pic"
+              <img [src]="cart.book.image" alt="pic"
                    style="height: 120px;  object-fit: contain">
             </td>
-            <td style="text-align: left">Nhà giả kim <br><br>
-              <p>89.000đ</p></td>
-            <td>01</td>
+            <td style="text-align: left">{{cart.book.name}}<br><br>
+              <p>{{cart.book.price | number}}</p></td>
             <td>
-              <p class="product-price">89.000đ</p>
+              <div>
+                <!--                   <span class="px-2 d-flex justify-content-center align-items-center"-->
+                <!--                         (click)="decrease(i)" style="cursor: pointer">-->
+                <!--                  <i class="fas fa-minus text-light"></i>-->
+                <!--                </span>-->
+                <button type="button" (click)="decrease(i)">-</button>
+
+                <input min="1" type="number" [value]="cart.quantity"
+                       style="background: green; border: white solid 1px; width: 50%"/>
+
+                <!--                <span class="px-2 d-flex justify-content-center align-items-center"-->
+                <!--                      (click)="increase(i)" style="cursor: pointer">-->
+                <!--                  <i class="fas fa-plus text-light"></i>-->
+                <!--                </span>-->
+                <button type="button" (click)="increase(i)">+</button>
+              </div>
             </td>
             <td>
-              <img src="/assets/PIC/delete.png" alt="" style="height: 20px; object-fit: contain">
+              <p class="product-price">{{cart.quantity * cart.book.price | number}}đ</p>
+            </td>
+            <td>
+              <img src="/assets/PIC/delete.png" alt="" style="height: 20px; object-fit: contain"
+                   (click)="deleteCart(cart.id)">
             </td>
           </tr>
+          </tbody>
+
         </table>
       </div>
     </div>
     <div class="col-4">
       <div class="row pay-block">
-        <table style="object-fit: contain">
-          <tr style="text-align: left; vertical-align: center; height: 50px">
-            <td style="width: 70%">
-              Thành tiền
-            </td>
-            <td style="text-align: right">
-              89.000đ
-            </td>
-          </tr>
-          <tr style="text-align: left;vertical-align: center; height: 50px">
-            <td>Phí vận chuyển (giao hàng tiêu chuẩn)</td>
-            <td style="text-align: right">30.000đ</td>
-          </tr>
-          <tr style="text-align: left; vertical-align: center; height: 50px">
-            <td style="font-weight: bolder">Tổng số tiền (gồm VAT)</td>
-            <td style="text-align: right">
-              <p class="product-price">119.000đ</p>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" style="text-align: center;">
-              <button style="width: 100%; height: 40px; border-radius: 10px;
+        <form [formGroup]="orderForm">
+          <table style="object-fit: contain">
+            <tr style="text-align: left; vertical-align: center; height: 50px">
+              <td style="width: 70%">
+                Thành tiền
+              </td>
+              <td style="text-align: right">
+                <span>{{totalPrice | number}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center;vertical-align: center; height: 30px"> Phương Thức Giao Hàng
+              </td>
+            </tr>
+            <tr style="text-align: left;vertical-align: center; height: 50px">
+              <td style="width: 100%">
+                <select class="form-control" name="shipping" id="shipping" formControlName="shippingMethod"
+                        (change)="getFeeShippingMethod()">
+                  <option value=1>Giao hàng tiêu chuẩn</option>
+                  <option value=2>Giao hàng nhanh</option>
+                  <option value=3>Giao hàng hỏa tốc</option>
+                  <option value=4>Giao hàng hàng không</option>
+                </select>
+              </td>
+              <td style="text-align: right;">{{feeShipping | number}}</td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center;vertical-align: center; height: 30px">Phương thức thanh toán
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <select class="form-control" name="shipping" formControlName="paymentMethod">
+                  <option value="Thanh toán khi nhận hàng" selected>Thanh toán khi nhận</option>
+                  <option value="Thanh toán chuyển khoản">Thanh toán chuyển khoản</option>
+                </select>
+              </td>
+            </tr>
+            <tr style="text-align: left; vertical-align: center; height: 50px">
+              <td style="font-weight: bolder">Tổng số tiền (gồm VAT)</td>
+              <td style="text-align: right">
+                <p class="product-price">{{totalPrice + feeShipping | currency: "VND"}}</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center;">
+
+                <button style="width: 100%; height: 40px; border-radius: 10px;
                             background-color: #C92127; color: white; font-weight: bold; font-size: 1.5rem;
-                            border: none">Thanh Toán
-              </button>
-            </td>
-          </tr>
-        </table>
+                            border: none" *ngIf="selectCart.length >=1 "
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" (click)=" getOrderInfo()">Xác nhận đơn hàng
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div id="paypalButton" style="width: 100%"></div>
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+<!--        Modal View Order-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black">Hóa Đơn Của Bạn</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+        <label class="col-form-label lab">Tên Tài Khoản</label>
+        <input id="deleteName" class="form-control" readonly [(ngModel)]="customerUserName">
+        <label class="col-form-label lab">Phương thức giao hàng</label>
+        <div>
+          <input class="form-control" value="Giao Hàng Tiêu Chuẩn" name="shipping"
+                 *ngIf="orderForm.value.shippingMethod == 1"
+                 disabled>
+          <input class="form-control" value="Giao Hàng Nhanh" name="shipping"
+                 *ngIf="orderForm.value.shippingMethod == 2"
+                 disabled>
+          <input class="form-control" value="Giao Hàng Hỏa Tốc" name="shipping"
+                 *ngIf="orderForm.value.shippingMethod  == 3"
+                 disabled>
+          <input class="form-control" value="Giao Hàng Máy Bay" name="shipping"
+                 *ngIf="orderForm.value.shippingMethod == 4"
+                 disabled>
+        </div>
+        <label class="col-form-label lab">Ngày Tạo Hóa Đơn</label>
+        <input id="dateProcess" class="form-control" readonly [value]="dateOrderProcess | date: 'yyyy-MM-dd'">
+        <label class="col-form-label lab">Hình Thức Thanh Toán</label>
+        <input id="payment" class="form-control" readonly [value]="orderForm.value.paymentMethod" >
+        <label class="col-form-label lab">Danh sách Sản Phẩm Đã Chọn</label>
+        <table class="table-modal" style="border: green 1px">
+          <thead style="border: green 1px; text-align: center">
+          <tr>
+            <td>Sản Phẩm</td>
+            <td>Tên Sản Phẩm</td>
+            <td>Số Lượng</td>
+          </tr>
+          </thead>
+          <tbody *ngFor="let item of selectCart" style="border: green 1px; text-align: center" >
+          <tr>
+            <td style="text-align: center">
+              <img [src]="item.book.image" alt="pic" style="object-fit: contain; height: 50px">
+            </td>
+            <td style="text-align: left;">
+              {{item.book.name}}
+            </td>
+            <td style="text-align: center">
+              {{item.quantity}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="button btnRed redBorder" data-bs-dismiss="modal" (click)="normalPayment()" >
+          Xác nhận mua hàng
+        </button>
+        <button type="button" class="mx-2 button btnYellow yellowBorder " data-bs-dismiss="modal">Quay Lại
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {LoginRequest} from '../model/login-request';
+import {LoginResponse} from '../model/login-response';
 
 
 const AUTH_API = 'http://localhost:8080/api/public/';
@@ -28,11 +30,9 @@ export class AuthenticationService {
     };
   }
 
-  login(obj: { username: string; password: string; }): Observable<any> {
-    return this.http.post(AUTH_API + 'login', {
-      username: obj.username,
-      password: obj.password
-    }, this.httpOptions);
+  login(loginRequest: LoginRequest): Observable<LoginResponse> {
+    // @ts-ignore
+    return this.http.post<Observable<LoginResponse>>(AUTH_API + 'login', loginRequest);
   }
 
   forgotPassword(email): Observable<any> {

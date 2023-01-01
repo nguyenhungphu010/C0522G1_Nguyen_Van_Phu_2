@@ -4,6 +4,8 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {Books} from '../../../model/books';
 import {Title} from '@angular/platform-browser';
 import {BookService} from '../../../service/book.service';
+import {CartService} from '../../../service/cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-book-detail',
@@ -13,12 +15,14 @@ import {BookService} from '../../../service/book.service';
 export class BookDetailComponent implements OnInit {
   bookId: number;
   book: Books;
+  bookAddTocartId: number;
   bookImage: string;
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private title: Title,
-              private bookService: BookService) {
+              private bookService: BookService,
+              private cartService: CartService) {
     this.title.setTitle('Book Detail');
   }
 
@@ -50,5 +54,18 @@ export class BookDetailComponent implements OnInit {
     });
   }
 
+  addToCart(){
+    this.cartService.addToCart(this.bookId).subscribe(data => {
+      this.cartService.getAllCart().subscribe();
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: ' them vao gio hang thanh cong!',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    })
+
+  }
 
 }
